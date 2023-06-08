@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice 1</title>
+    <style>
+        /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+body{
+            padding: 16px;
+            margin: 0;
+            font-size: 13px;
+        }
+        body *{
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        .title{
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.618rem;
+            text-align: center;
+
+        }
+        .top-section{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .top-section>div{
+            width: 50%;
+        }
+        .right-section{
+            /*display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;*/
+        }
+        .right-section > div{
+            width: calc(50%);
+            /*border: 1px solid;*/
+            min-height: 60px;
+            padding: .5rem;
+        }
+        .left-section>div{
+            /*border: 1px solid;*/
+            padding: .5rem;
+        }
+        .value{
+            font-weight: bold;
+        }
+        .item-table td div{
+            font-weight: bold;
+        }
+        .item-table td, .item-table th{
+            /*border: 1px solid;*/
+            padding: 4px;
+        }
+        .item-table th{
+            text-align: center;
+            border-bottom: 1px solid;
+        }
+        .item-table{width: 100%}
+        .big-font{
+            font-size: 1.618rem;
+        }
+        .med-font{
+            font-size: 1.1rem;
+        }
+        .bold-text{
+            font-weight: bold;
+        }
+        .footer{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .footer > div{
+            width: 50%;
+            padding: 2rem 0;
+        }
+        .footer > div:first-child{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            /*-webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;*/
+        }
+        .footer > div label{
+            min-width: 200px;
+        }
+        .footer > div:nth-child(2) > div{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 4px 0;
+        }
+        .sign{
+            /*border: 1px solid;*/
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+        .flex{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .sign > div:nth-child(2){
+            min-height: 100px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;
+        }
+        .right-table td{
+            border: 1px solid;
+        }
+        .right-table td > div{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+        }
+        .field{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            padding: 0 8px;
+
+        }
+        .field{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 8px 0;
+            min-width: 50%;
+        }
+
+        .field-container{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 8px 0;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        }
+
+        label{
+            min-width: 200px;
+            color: #777;
+        }
+        .w-100{
+            width: 100% !important;
+        }
+    </style>
+</head>
+<body style="font-size: 16px;">
+    <!-- <div class="title">Tax Invoice</div> -->
+    <div class="top-section">
+        <div class="left-section">
+           <div class="big-font bold-text"><%=@booking_rewards_lead["broker"]["name"]%></div>
+           <div>
+               <span>Realtor</span>
+           </div>
+
+        </div>
+
+    </div>
+    <br/><br/>
+    <div class="">
+        <div class="big-font">Unit Details:</div>
+        <br/>
+        <div>
+            <div class="field-container">
+                <div class="field">
+                    <label>Date</label>
+                    <span class="value"><%=@booking_rewards_lead["booking_date"]%></span>
+                </div>
+                <div class="field">
+                    <label>Booking Form Number</label>
+                    <span class="value"><%=@booking_rewards_lead["booking_form_number"]%></span>
+                </div>
+            </div>
+            <div class="field-container">
+                <div class="field">
+                    <label>Unit Number</label>
+                    <span class="value"><%=@booking_rewards_lead["unit_number"]%></span>
+                </div>
+                <div class="field">
+                    <label>Project</label>
+                    <span class="value"><%=@booking_rewards_lead["project"]%></span>
+                </div>
+            </div>
+            <div class="field-container">
+                <div class="field">
+                    <label>Building Name</label>
+                    <span class="value"><%=@booking_rewards_lead["building_name"]%></span>
+                </div>
+                <div class="field">
+                    <label>Wing</label>
+                    <span class="value"><%=@booking_rewards_lead["wing"]%></span>
+                </div>
+            </div>
+            <div class="field-container">
+                <div class="field">
+                    <label>RERA Carpet Area</label>
+                    <span class="value"><%=@booking_rewards_lead["rera_carpet_area"]%></span>
+                </div>
+            </div>
+            <div class="field-container">
+                <div class="field">
+                    <label>Agreement Value</label>
+                    <span class="value"><%=@booking_rewards_lead["agreement_value"]%></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <br/><br/>
+    <div class="">
+        <div class="big-font">Client Details:</div>
+        <!-- <br/> -->
+        <div>
+            <div class="field-container">
+                <div class="field">
+                    <label>Client name</label>
+                    <span class="value"><%=@booking_rewards_lead["booking_client"]["name"]%></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/><br/>
+    <div class="">
+        <div class="big-font">Token Details:</div>
+        <!-- <br/> -->
+        <div>
+            <div class="field-container">
+                <div class="field">
+                    <label>Token amount</label>
+                    <span class="value"><%=@booking_rewards_lead["booking_payment"]["token_amount"] %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center">This is a Computer Generated Booking Form</div>
+</body>
+</html>

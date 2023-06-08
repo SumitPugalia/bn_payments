@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+        }
+        table {
+            border: 1px solid black;
+            width: 400px;
+            color: white;
+            background-color: black;
+            margin: auto;
+        }
+        .powered {
+            text-transform: uppercase;
+            font-size: 14px;
+            margin: 0;
+            font-weight: 600;
+            font-size: 8px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 11px;
+            margin-top: auto;
+        }
+        .type {
+            text-align: center;
+            border-radius: 14px;
+            background: #2A2A2A
+        }
+        hr {
+            margin: 0;
+            width: 80%;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        .line hr {
+            float: right;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .dot {
+            height: 7px;
+            width: 8px;
+            margin: 3px;
+            vertical-align: middle;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.2;
+        }
+        .card-notes {
+            height: 10px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .card-notes td {
+            vertical-align: baseline;
+        }
+        .card-notes p {
+            margin-bottom: 26px;
+        }
+        .card-notes .notes{
+            padding: 0 0 0 10px;
+        }
+        .footer {
+            color: #000000;
+            background-color: #FFFFFF;
+            border-radius: 24px 24px 0px 0px;
+            padding: 10px;
+            border-bottom: 0;
+        }
+        .common-footer {
+            position: relative;
+            top: -20px;
+        }
+        .footer p {
+            color: rgba(0, 0, 0, 0.6);
+            padding-right: 2%;
+        }
+        .footer img {
+            box-sizing: border-box;
+            border-radius: 10px;
+            background-color: #000000;
+            padding: 2%;
+        }
+        .footer-img {
+            width: 20%
+        }
+        th {
+            text-align: left;
+        }
+        .footer-text {
+            width: 70%;
+            height: 60px;
+            vertical-align: top;
+            line-height: 3px;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+        .footer-details {
+            border-top: 0;
+            border-bottom: 0;
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        .footer-end {
+            border-top: 0;
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        .footer-end hr {
+            width: 100%;
+        }
+        .footer-img img{
+            box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #000000;
+    padding: 2%;
+        }
+        .footer-end p {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="powered"> Powered by </td>
+        </tr>
+        <tr>
+            <td width ="70%">
+                <img width="auto" height="24px" src="https://bn-temp.imgix.net/residential_amenities/bn.svg" />
+            </td>
+            <td width ="23%" style ="margin: 5px;" class="type"> Resale </td>
+            <td width="1%"></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td class="line ">
+                <hr>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td width ="22%"> <img width="73px" height="73px" src="https://bn-temp.imgix.net/residential_amenities/building-icon.svg" />
+            </td>
+            <td >
+                <span><%= @params.building_name %></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img width="73px" height="73px" src="https://bn-temp.imgix.net/residential_amenities/cash-icon.svg" />
+            </td>
+            <td>
+                <span class="curr-price"> &#x20b9; <%= @params.price %> </span> &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td> <img width="73px" height="73px" src="https://bn-temp.imgix.net/residential_amenities/parking-icon.svg" />
+            </td>
+            <td>
+                <div class="price-tag">
+                    <span class="curr-price"> <%= @params.configuration_type %> </span>
+                    <span class="dot"></span>
+                    <span class="curr-price"> <%= @params.carpet_area %> </span>
+                    <span class="dot"></span>
+                    <span class="curr-price"> <%= @params.parking %> </span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td> <img width="73px" height="73px" src="https://bn-temp.imgix.net/residential_amenities/location-icon.svg" />
+            </td>
+            <td>
+                <span> <%= @params.building_display_address %> </span>
+            </td>
+        </tr>
+        <tr class="card-notes">
+            <td class ="notes" left="10px">
+                Notes
+            </td>
+            <td>
+                <p> <%= @params.notes %> </p>
+            </td>
+        </tr>
+    </table>
+    <table class=" common-footer footer">
+        <tr>
+            <th>Broker Details</th>
+        </tr>
+    </table>
+    <table class="common-footer footer-details">
+        <tr>
+            <td class="footer-img"> <img width="60px" height="60px" src= <%= @params.broker_profile_image %> />
+            </td>
+            <td class="footer-text">
+                <p> <%= @params.broker_name %> </p>
+                <p> <%= @params.broker_phone_number %> </p>
+            </td>
+        </tr>
+    </table>
+    <table class=" common-footer footer-end">
+        <tr>
+            <td>
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p> <%= @params.organization_name %> </p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

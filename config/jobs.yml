@@ -1,0 +1,9 @@
+- name: mix_server
+  command: "bundle exec mix phx.server"
+  env: PORT=40%(process_num)02d,MIX_ENV=prod
+  stdout_logfile: log/mix_server.log
+
+- name: scheduler
+  command: "bundle exec mix phx.server"
+  env: MIX_ENV=prod,SCHEDULER=true
+  stdout_logfile: log/scheduler.log

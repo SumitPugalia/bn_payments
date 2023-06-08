@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNC</title>
+    <style>
+        :root {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 20px 40px;
+        }
+
+        .list-wrapper {
+            margin: 0;
+            list-style: none;
+        }
+
+        .tnc {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <strong><u>User Agreement: Booking Rewards</u></strong><br>
+    <p>
+        <strong><u>Declaration, Definitions and Process:</u></strong><br>I declare ((hereinafter referred to as
+        "<b>Declaration</b>") that I am a real estate "Broker" as per the
+        definition of
+        "Agent" under the Real Estate Regulation and Development Act, 2016 with a valid RERA Registration Number
+        (hereinafter referred to as "<b>Broker</b>") empanelled on the <b>Broker Network App</b> (hereinafter referred
+        to as "<b>App</b>")
+        which is an intellectual property of <b>4B Networks Private Limited</b> a company incorporated under the laws of
+        India,
+        with CIN U73100MH2020PTC349457 and having its registered office at Ground Floor, A UNIT OF FLEUR HOTELS PVT LTD, LEMON TREE
+        PREMIER HOTEL, Behind RBL Bank Marol Andheri East, Mumbai,
+        Mumbai Suburban, Maharashtra, 400059 (hereinafter referred to as "<b>Company</b>") and all the information
+        furnished by me on the App for any purpose is true, complete and correct to the best of my knowledge
+        (hereinafter referred to as "<b>Broker Declaration</b>") <br>
+        The Company has a feature on its App called the Booking Rewards Feature (hereinafter referred to as "<b>Spot
+            Rewards Feature</b>") whereby a <b>Broker</b> will be rewarded a particular sum in INR decided by the
+        <b>Company</b> at any point
+        in time at the sole discretion of the <b>Company</b> (hereinafter referred to as "<b>Spot Reward</b>)
+        <br>
+        The Broker is a real estate broker helping its clients, also termed as "Applicant" under the Real Estate
+        Regulation and Development Act, 2016 (hereinafter referred to as "<b>Client</b>") to purchase real estate
+        properties
+        from Builders/Developers also termed as "Promoter" under the Real Estate Regulation and Development Act, 2016
+        (hereinafter referred to as "<b>Builder</b>")
+        <br>
+        Real Estate Regulation and Development Act, 2016 (hereinafter referred to as "<b>RERA</b>")
+        <br>
+        The Broker agrees that at any given point of time if any information provided by the Broker is incorrect or
+        false, the <b>Company</b> shall have the right to take legal action against the <b>Broker</b>.
+    </p>
+    <p style="margin-bottom: 0;">A <b>Spot Reward</b> can be claimed by a <b>Broker</b> on the <b>App</b> in 2 (Two)
+        stages.<br>
+        <b>Broker</b> has to be registered on the App at the time of claiming <b>Spot Reward<br>
+            Builder</b> and its real estate Projects (hereinafter referred to as "<b>Project</b>") has to be registered
+        on the <b>App</b> at the time of claiming <b>Spot Reward</b>.
+        <br>1st (first) stage (hereinafter referred to as "<b>Stage 1</b>") when the <b>Broker's Client</b> has booked
+        (hereinafter referred to as "<b>Booking</b>") a Real Estate Property (hereinafter referred to as "<b>Unit</b>")
+        at the Builder's RERA registered real estate "Project" (hereinafter referred to as "<b>Project</b>") by paying a
+        consideration amount through a token amount (hereinafter referred to as "<b>Token</b>") and the <b>Builder</b>
+        has confirmed such <b>Booking</b> to the <b>Company</b> through an official Email (hereinafter referred to as
+        "<b>Builder Approval for Stage 1</b>")
+        <br><b>Token</b> amount has to be a minimum of Rs. 1 Lac (Rupees One Lac) or 5% of Agreement Value of the said
+        <b>Unit</b> booked by the said <b>Client</b> through the said <b>Broker</b> with the said <b>Builder</b>.
+        2nd (second) stage (hereinafter referred to as "<b>Stage 2</b>") when the <b>Broker's Client</b> has registered
+        the same <b>Unit</b> with the applicable registration office authorized by the state <b>RERA</b> (hereinafter
+        referred to as "<b>Registration</b>") and the <b>Builder</b> has confirmed such <b>Registration</b> to the
+        <b>Company</b> through an official Email (hereinafter referred to as "<b>Builder Approval for Stage 2</b>")
+        To claim <b>Spot Reward</b> at <b>Stage 1</b> and <b>Stage 2</b>, the <b>Broker</b> will have to enter and
+        submit all information and upload all supporting documents as required by the <b>Company</b> on the <b>App</b>
+        to establish completion of <b>Stage 1</b> and <b>Stage 2</b>.<br>
+    </p>
+    To claim <b>Spot Reward</b> at <b>Stage 1</b> on the <b>App</b> the <b>Broker</b> needs to provide on the
+    <b>App</b>
+    with the following:<br />
+    <ul class="list-wrapper">
+        <li>
+            Stage 1 a: <b>Client</b> Name, <b>Unit</b> Details - <b>Unit</b> Number, Building Name, Wing Name/Number,
+            Agreement Value of the
+            <b>Unit</b> agreed between the <b>Builder</b> and the <b>Client</b>.
+        </li>
+        <li>
+            Stage 1 b: <b>Token</b> Details - Mode of Payment, Payment Proof of the <b>Token</b>
+        </li>
+        <li>
+            Stage 1 c: Taxable Invoice to <b>Company</b> for <b>Spot Reward</b> of <b>Stage 1</b>.
+        </li>
+    </ul>
+
+    To claim <b>Spot Reward</b> at <b>Stage 2</b> on the <b>App</b> the <b>Broker</b> needs to provide on the <b>App</b>
+    with the following:
+    <ul class="list-wrapper">
+        <li>
+            Stage 2 a: <b>Client</b> Name, <b>Unit</b> Details - Unit Number, Building Name, Wing Name/Number, Agreement
+            Value of the
+            <b>Unit</b> agreed between the <b>Builder</b> and the <b>Client</b>.
+        </li>
+        <li>
+            Stage 2 b: <b>Token</b> Details - Mode of Payment, Payment Proof of the <b>Token</b>
+        </li>
+        <li>
+            Stage 2 c: Proof of Registration and Index 2 of the Unit Registered by the <b>Broker's Client</b>.
+        </li>
+        <li>
+            Stage 2 d: Taxable Invoice to <b>Company</b> for Spot Reward of <b>Stage 2</b>.
+        </li>
+        <li>
+            Stage 2 e: Taxable Invoice to the <b>Builder</b> for the brokerage amount of the said <b>Unit</b> to be
+            claimed from the
+            <b>Builder</b>.
+        </li>
+    </ul>
+    <div class="tnc">
+        <strong><u>Terms and Conditions:</u></strong>
+        <ol style="margin-top: 0">
+            <li>
+                The <b>Company</b> shall take a confirmation on email from the <b>Builder</b> to confirm the <b>Stage
+                    1</b>
+                and <b>Stage 2</b> details. Post such confirmation from the <b>Builder</b>, the <b>Company</b> shall at
+                its
+                sole discretion process the <b>Spot Reward</b> of <b>Stage 1</b> and/or <b>Stage 2</b> as deemed correct
+                by
+                the <b>Company</b>, towards the <b>Broker</b> through the <b>Broker</b>'s bank details provided by the
+                <b>Broker</b> on the <b>App</b>.
+            </li>
+            <li>
+                The <b>Broker</b> agrees that <b>Client</b> and <b>Unit</b> details entered and submitted on the
+                <b>App</b>
+                at <b>Stage 1</b> and <b>Stage 2</b> are the same.
+            </li>
+            <li>
+                The <b>Company</b> shall have the sole discretion to approve or reject <b>Spot Reward</b> of any
+                <b>Broker</b> related to any <b>Booking</b> of any <b>Unit</b> of any <b>Client</b> with any
+                <b>Builder</b>.
+            </li>
+            <li>
+                The <b>Broker</b> acknowledges and accepts that the <b>Spot Reward</b> paid by <b>Company</b> to
+                <b>Broker</b> will be at the sole discretion of the <b>Company</b> and will be inclusive including GST
+                and
+                subject to TDS as applicable under all applicable Tax Laws of India.
+            </li>
+            <li>
+                The claim for <b>Spot Reward</b> for <b>Stage 1</b> should be submitted by the <b>Broker</b> on the
+                <b>App</b> on the same date of <b>Booking</b>. Back dated claims will not be valid and will not be
+                accepted
+                by the <b>Company</b>.
+            </li>
+            <li>
+                In order to claim <b>Spot Reward</b>, The <b>Registration</b> of the said <b>Unit</b> has to be done by
+                the
+                <b>Broker</b>'s <b>Client</b> within 90 days from the date of <b>Booking</b>, (hereinafter referred to
+                as
+                "<b>Expiry Period</b>")
+            </li>
+            <li>
+                The claim for <b>Spot Reward</b> for <b>Stage 2</b> should be submitted by the <b>Broker</b> on the
+                <b>App</b> within 90 days from the date of <b>Booking</b> and after successful <b>Registration</b> of
+                the
+                same <b>Unit</b> booked by the same <b>Client</b> with the <b>Builder</b>, details of which were
+                submitted
+                at the time of claiming the <b>Booking</b> Reward of <b>Stage 1</b> by the <b>Broker</b>.
+            </li>
+            <li>
+                Any <b>Spot Reward</b> Claim for <b>Stage 1</b> submitted by the <b>Broker</b> on the <b>App</b> after
+                the
+                actual <b>Booking</b> date of that <b>Unit</b> will not be accepted by the <b>Company</b>.
+            </li>
+            <li>
+                Any <b>Spot Reward</b> Claim for <b>Stage 2</b> submitted by the <b>Broker</b> on the <b>App</b> after
+                90
+                days of <b>Registration</b> of that <b>Unit</b> will not be accepted by the <b>Company</b>.
+            </li>
+            <li>
+                Any <b>Spot Rewards</b> can be Accepted/Rejected by the <b>Company</b> at its sole discretion at any
+                given
+                point in time.
+            </li>
+            <li>
+                The <b>Broker</b> agrees that the <b>Company</b> may release the amount of <b>Spot Rewards</b> Claim for
+                <b>Stage 1</b> at <b>Company</b>'s Sole Discretion and may Release the amount of <b>Spot Rewards</b>
+                Claim
+                for <b>Stage 2</b> at <b>Company</b>'s Sole discretion only after Collection of the total <b>Booking
+                    Rewards</b> of Stage 1 and Stage 2 from the <b>Developer</b> reflects in the designated Bank Account
+                of
+                the <b>Company</b>.
+            </li>
+            <li>
+                The <b>Broker</b> agrees that if the <b>Registration</b> of the said <b>Unit</b> and the claim for
+                <b>Spot
+                    Reward</b> for <b>Stage 2</b> is not sent by the <b>Broker</b> to the <b>Company</b> on the
+                <b>App</b>
+                within the <b>Expiry Period</b>, the <b>Company</b> may "Adjust" such '<b>Stage 1</b>' '<b>Spot
+                    Reward</b>'
+                which was released by the <b>Company</b> to the <b>Broker</b> against any future payment due to be made
+                by
+                the <b>Company</b> to the <b>Broker</b> (hereinafter referred to as "<b>Reward Adjustment</b>"). The
+                <b>Broker</b> agrees to pass a credit note to the <b>Company</b> to nullify the previous Invoice and
+                execute
+                <b>Reward Adjustment</b>.
+            </li>
+            <li>
+                The <b>Broker</b> agrees that the <b>Builder</b>, at any stage during <b>Builder</b> Approval for
+                <b>Stage
+                    1</b> or <b>Builder</b> Approval for <b>Stage 2</b>, shall decide to adjust the entire <b>Spot
+                    Reward</b> for that <b>Unit</b> to be adjusted against the total brokerage/fees for sale of that
+                particular <b>Unit</b> to be paid by the <b>Builder</b> to the <b>Broker</b> through any medium decided
+                by
+                the <b>Builder</b>.
+            </li>
+            <li>
+                <b>Broker</b> hereby undertakes and is responsible that Taxable Invoice Details like <b>Client</b>
+                Details,
+                <b>Unit</b> Details, Agreement Value of the <b>Unit</b>, and PAN, GST Details, Registered Address & Bank
+                Details of required parties are accurate.
+            </li>
+            <li>
+                The <b>Broker</b> hereby undertakes to indemnify, defend and hold harmless the <b>Company</b> against
+                any
+                and all losses, liabilities, claims and damages incurred by the <b>Company</b> as a result of: (i) any
+                breach, violation or non-compliance of any of the terms, conditions, responsibilities and obligations
+                stipulated under this Agreement by the Broker and/or its representatives; and/or (ii) any applicable
+                laws,
+                by-laws, regulations or guidelines by the <b>Broker</b>; and/or (iii) any action taken by the
+                <b>Broker</b>
+                which may prejudice the reputation or goodwill of the <b>Company</b>; (iv) any fraud, misconduct,
+                misrepresentation, willful default or negligence/mistake by the <b>Broker</b> and/or its representative.
+            </li>
+        </ol>
+    </div>
+    The <b>Broker</b> agrees that he has Read, Understood and Agreed to all the above Declarations, Definitions,
+    Processes and Terms and Conditions.
+</body>
+
+</html>

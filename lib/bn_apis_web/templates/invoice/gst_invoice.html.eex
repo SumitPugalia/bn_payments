@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body{
+            padding: 16px;
+            margin: 0;
+            font-size: 13px;
+        }
+        body *{
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        .title{
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.618rem;
+            text-align: center;
+
+        }
+        .top-section{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+        .top-section>div{
+            width: 100%;
+        }
+        .right-section{
+            height: 100%;
+            height: calc(100%);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+        }
+        .right-section > div{
+            width: calc(50%);
+            border: 1px solid;
+            min-height: 60px;
+            padding: .5rem;
+        }
+        .left-section>div{
+            border: 1px solid;
+            padding: .5rem;
+        }
+        .value{
+            font-weight: bold;
+        }
+        .item-table td div{
+            font-weight: bold;
+        }
+        .item-table td, .item-table th{
+            border: 1px solid;
+            padding: 4px;
+        }
+        .item-table{width: 100%}
+        .big-font{
+            font-size: 1.618rem;
+        }
+        .med-font{
+            font-size: 1.1rem;
+        }
+        .bold-text{
+            font-weight: bold;
+        }
+        .footer{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+        .footer > div{
+            width: 50%;
+            padding: 2rem 0;
+        }
+        .footer > div:first-child{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+        .footer > div label{
+            min-width: 200px;
+        }
+        .footer > div:nth-child(2) > div{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            padding: 4px;
+        }
+        .sign{
+            border: 1px solid;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-align-items: flex-end;
+                    -webkit-box-align: end;
+                    align-items: flex-end;
+                    -ms-flex-align: end;
+        }
+        .sign > div:nth-child(2){
+            min-height: 80px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: flex-end;
+                    -webkit-box-align: end;
+                    align-items: flex-end;
+                    -ms-flex-align: end;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Tax Invoice</div>
+    <div class="top-section">
+        <div class="left-section">
+            <div>
+                <table style="width: 100%;" class="right-table" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label>Invoice No.:</label>
+                                    <span class="value"><%= @invoice_data.invoice_number %></span>
+                                </div>
+                            </td>
+                            <td style="text-align:  right;">
+                                <div>
+                                    <label>Date:</label>
+                                    <span class="value"><%= @invoice_data.invoice_date %></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <div style="font-weight: bold;">4B NETWORKS PRIVATE LIMITED</div>
+                <div>
+                    <%= raw(broker_network_address()) %>
+                    CIN: U73100MH2020PTC349457<br/>
+                </div>
+            </div>
+            <div>
+                <div>Consignee (Ship to)</div>
+                <div style="font-weight: bold;"><%= @invoice_data.broker_gst_legal_name %></div>
+                <div>
+                    <%= @invoice_data.broker_gst_address %><br/>
+                    GSTIN/UIN: <%= @invoice_data.broker_gst %><br/>
+                    PAN:  <%= @invoice_data.broker_gst_pan %><br/>
+                </div>
+            </div>
+            <div>
+                <div>Buyer (Bill to)</div>
+                <div style="font-weight: bold;"><%= @invoice_data.broker_gst_legal_name %></div>
+                <div>
+                    <%= @invoice_data.broker_gst_address %><br/>
+                    GSTIN/UIN: <%= @invoice_data.broker_gst %><br/>
+                    PAN:  <%= @invoice_data.broker_gst_pan %><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="items">
+        <table class="item-table" cellspacing="0">
+            <thead>
+            <tr>
+                <th>S No.</th>
+                <th>Particulars</th>
+                <th>HSN/SAC</th>
+                <th>Subscription period</th>
+                <th>Rate</th>
+                <th>Per</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">1</td>
+                    <td>
+                        <div>Owner Subscription</div>
+                        <div>CGST</div>
+                        <div>SGST</div><br/>
+                        <div>Period of the Subscription:</div>
+                        <div><%= @invoice_data.current_start %> to <%= @invoice_data.current_end %></div>
+                    </td>
+                    <td>
+                        <div>HSN/SAC</div>
+                        <div>(Code 998439)</div>
+                    </td>
+                    <td>
+                        <div>
+                            <%= @invoice_data.subscription_period %>
+                        </div>
+                    </td>
+                    <td>
+                        <div></div>
+                        <div>9%</div>
+                        <div>9%</div>
+                    </td>
+                    <td>Per</td>
+                    <td>
+                        <div><%= @invoice_data.taxable_value %></div>
+                        <div><%= @invoice_data.cgst_value %></div>
+                        <div><%= @invoice_data.sgst_value %></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="med-font"><%= @invoice_data.price %></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;">
+                        <div style="display: flex; display: -webkit-flex; display: -webkit-box; justify-content: space-between; -webkit-box-pack: justify;">
+                            <div>Amount Chargeable (in words)</div>
+                            <div>E. & O.E</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;">
+                        <div class="med-font">INR <%= @invoice_data.price_in_words %> Only</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;" >
+                        <table style="width: 100%;" cellspacing="0" cellpadding="4">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">HSN/SAC</th>
+                                    <th rowspan="2">Taxable Value</th>
+                                    <th colspan="2">Central Tax</th>
+                                    <th colspan="2">State Tax</th>
+                                    <th rowspan="2">Total <br/> Tax Amount</th>
+                                </tr>
+                                <tr>
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><b>(Code 998439)</b></td>
+                                    <td><%= @invoice_data.taxable_value %></td>
+                                    <td>9%</td>
+                                    <td><%= @invoice_data.cgst_value %></td>
+                                    <td>9%</td>
+                                    <td><%= @invoice_data.sgst_value %></td>
+                                    <td><%= @invoice_data.total_tax %></td>
+                                </tr>
+                                <tr>
+                                    <td class="bold-text">Total</td>
+                                    <td class="bold-text"><%= @invoice_data.taxable_value %></td>
+                                    <td class="bold-text"></td>
+                                    <td class="bold-text"><%= @invoice_data.cgst_value %></td>
+                                    <td class="bold-text"></td>
+                                    <td class="bold-text"><%= @invoice_data.sgst_value %></td>
+                                    <td class="bold-text"><%= @invoice_data.total_tax %></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" style="border: none;">
+                                        <div class="med-font"><span style="font-weight: 100; font-size: 1rem;">Tax Amount (in words)  :</span> INR <%= @invoice_data.total_tax_in_words %> Only</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        <div></div>
+        <div>
+            <div>Company’s Bank Details</div>
+            <div>
+                <label>A/c Holder’s Name: </label>
+                <span class="bold-text">4B NETWORKS PRIVATE LIMITED</span>
+            </div>
+            <div>
+                <label>Bank Name: </label>
+                <span class="bold-text">ICICI Bank</span>
+            </div>
+            <div>
+                <label>A/c No.: </label>
+                <span class="bold-text">643805501075</span>
+            </div>
+            <div>
+                <label>Branch & IFS Code: </label>
+                <span class="bold-text">Sakinaka Branch & ICIC0006438</span>
+            </div>
+            <div class="sign">
+                <table cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div></div>
+                                <div class="bold-text">
+                                    For 4B NETWORKS PRIVATE LIMITED
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td><br/><br/><br/></td></tr>
+                        <tr>
+                            <td>
+                                <div>Authorised Signatory</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center">This is a Computer Generated Invoice and does not require signature</div>
+</body>
+</html>

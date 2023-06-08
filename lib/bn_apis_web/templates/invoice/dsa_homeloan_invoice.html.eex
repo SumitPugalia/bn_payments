@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Loan Commission Invoice</title>
+    <style>
+        :root {
+            font-family: sans-serif;
+            line-height: 1.5rem;
+            font-size: 10px;
+            word-break: break-word;
+        }
+
+        body {
+            border: 1px solid black;
+        }
+
+        header {
+            text-align: center;
+            line-height: 1.5rem;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 1.75rem;
+            font-weight: normal;
+        }
+
+        footer {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 10px;
+            border-top: 1px solid black;
+            background-color: red;
+        }
+        .commission-table {
+            border-collapse: collapse;
+            margin: 30px 0 20px 0;
+            width: 100%;
+        }
+
+        .commission-table th {
+            padding: 10px;
+            border: 1px solid black;
+            vertical-align: top;
+        }
+
+        .commission-table td {
+            border: 1px solid black;
+            padding: 2px 8px;
+        }
+
+        .commission-table td:empty::after {
+            content: "\00a0";
+        }
+
+        .commission-table td[colspan="6"] {
+            border: none;
+        }
+        .commission-table td:first-of-type, .commission-table th:first-of-type {
+            border-left: none;
+        }
+
+        .commission-table td:last-of-type, .commission-table th:last-of-type  {
+            border-right: none;
+        }
+
+        .hidden-row-data {
+            visibility: hidden;
+        }
+
+        .details {
+            margin-left: 10px;
+        }
+
+        .invoice-details-label {
+            width: 72px;
+            display: inline-block;
+        }
+
+        .company-details {
+            margin-top: 20px;
+        }
+
+        .company-details-heading {
+            margin-bottom: 5px;
+            font-size: 1.25rem;
+            font-weight: normal;
+        }
+
+        .sign {
+            padding: 0 0 0 15px;
+        }
+
+        .bank-details-heading {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .middle {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><%= @invoice_data.billing_company.name%></h1>
+        <%= @invoice_data.billing_company.address%><br>
+        PAN: <%= set_default(@invoice_data.billing_company.pan) %><br>
+        GSTIN: <%= set_default(@invoice_data.billing_company.gst)%>
+    </header>
+    <div class="details">
+        <div class="invoice-details">
+            <div class="invoice-details-label">Invoice No:</div>
+            <span><%= @invoice_data.invoice_number %></span><br/>
+            <div class="invoice-details-label">Date:</div>
+            <span><%= @invoice_data.invoice_date_pdf %></span>
+        </div>
+        <section class="company-details">
+            <h2 class="company-details-heading">4B Networks Pvt. Ltd.</h2>
+            <div>
+               <%= raw(broker_network_address()) %>
+            </div>
+        </section>
+    </div>
+    <table class="commission-table">
+        <thead>
+            <tr>
+                <th>
+                    Name of Client
+                </th>
+                <th>
+                    Type of Loan
+                </th>
+                <th>
+                    Name of issuing bank
+                </th>
+                <th>
+                    Sanction Amt. (Rs.)
+                </th>
+                <th>
+                    Disbursement Amt. (Rs.)
+                </th>
+                <th>
+                    Amount on brokerage given (A)
+                </th>
+                <th>
+                    % of brokerage (B)
+                </th>
+                <th>
+                    Brokerage amount (C=A*B)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= @invoice_data.loan_disbursements.homeloan_lead.name %></td>
+                <td><%= @invoice_data.loan_disbursements.homeloan_lead.loan_type %></td>
+                <td><%= @invoice_data.loan_disbursements.homeloan_lead.bank_name %></td>
+                <td class="right"><%= float_round(@invoice_data.loan_disbursements.loan_file.sanctioned_amount) %></td>
+                <td class="right"><%= float_round(@invoice_data.loan_disbursements.loan_disbursed) %></td>
+                <td class="right"><%= float_round(@invoice_data.amount_on_which_commission_is_given) %></td>
+                <td class="middle"><%= float_round(@invoice_data.commission_percent) %>%</td>
+                <td class="right"><%= float_round(@invoice_data.invoice_amount) %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total (a)</td>
+                <td class="right"><%= float_round(@invoice_data.invoice_amount) %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>TDS(b)** <%= get_tds_percentage(@invoice_data.is_tds_valid)%></td>
+                <td class="right"><%= @invoice_data.tds %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Net Payable (a-b)</td>
+                <td class="right"><%= @invoice_data.net_payable %></td>
+            </tr>
+            <tr>
+                <td colspan="6"></td>
+                <td>SGST</td>
+                <td class="right"><%= @invoice_data.sgst_display_value %></td>
+            </tr>
+            <tr>
+                <td colspan="6"></td>
+                <td>CGST</td>
+                <td class="right"><%= @invoice_data.cgst_display_value %></td>
+            </tr>
+            <tr>
+                <td colspan="6"></td>
+                <td>IGST</td>
+                <td class="right"><%= @invoice_data.igst_display_value %></td>
+            </tr>
+            <tr>
+                <td colspan="6"></td>
+                <td>Total Payable</td>
+                <td class="right"><%= @invoice_data.total_invoice_amount_pdf %></td>
+            </tr>
+        </tbody>
+    </table>
+    <footer style="display:">
+        <div>
+            <h2 class="bank-details-heading">Bank Details:-</h2>
+            A/c Holder's Name: <%= @invoice_data.billing_company.bank_account.account_holder_name%><br>
+            Bank Name: <%= @invoice_data.billing_company.bank_account.bank_name%><br>
+            A/c No.: <%= @invoice_data.billing_company.bank_account.account_number%><br>
+            Branch & IFS Code: <%= @invoice_data.billing_company.bank_account.ifsc%>
+        </div>
+        <div style="width:25%">
+            <div class="sign">Sign:</div>
+            <div>
+                <img src= <%= parse_signature(@invoice_data.billing_company.signature) %> style="width:70px" />
+            </div>
+            Name: <%= @invoice_data.billing_company.name%>
+        </div>
+    </footer>
+</body>
+
+</html>

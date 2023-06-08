@@ -1,0 +1,15 @@
+Exq.Mock.start_link(name: Exq.Mock, mode: :inline)
+Faker.start()
+Mox.defmock(PaymentGatewayMock, for: BnApis.PaymentGateway.Behaviour)
+Mox.defmock(SlackNotificationMock, for: BnApis.Helpers.ApplicationHelper.Behaviour)
+Mox.defmock(S3Mock, for: BnApis.Helpers.S3Helper.Behaviour)
+Mox.defmock(HtmlMock, for: BnApis.Helpers.HtmlHelper.Behaviour)
+Mox.defmock(SmsServiceMock, for: BnApis.Helpers.SmsService.Behaviour)
+Mox.defmock(RedisMock, for: BnApis.Helpers.Redis.Behaviour)
+
+Mox.defmock(SmsOtpServiceMock, for: BnApis.Helpers.OtpSmsHelper.Behaviour)
+Mox.defmock(HTTPMock, for: HTTPoison.Base)
+
+Ecto.Adapters.SQL.Sandbox.mode(BnApis.Repo, :manual)
+{:ok, _} = Application.ensure_all_started(:ex_machina)
+ExUnit.start()

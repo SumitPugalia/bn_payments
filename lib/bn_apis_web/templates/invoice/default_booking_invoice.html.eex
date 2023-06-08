@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Invoice</title>
+    <style>
+        body{
+            padding: 16px;
+            margin: 0;
+            font-size: 13px;
+        }
+        body *{
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        .title{
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.618rem;
+            text-align: center;
+
+        }
+        .top-section{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            text-align: left;
+        }
+        .top-section>div{
+            width: 50%;
+        }
+        .right-section{
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+        .right-section > div{
+            padding: .5rem;
+            max-width: 500px;
+        }
+        .left-section > div{
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            padding: .5rem;
+            max-width: 500px;
+
+        }
+        .value{
+            font-weight: bold;
+        }
+        .item-table td div{
+            font-weight: bold;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 500px;
+        }
+        .item-table td, .item-table th{
+            padding: 4px;
+            max-width: 500px;
+        }
+        .item-table th{
+            text-align: center;
+            border-bottom: 1px solid;
+        }
+        .item-table{width: 100%}
+        .big-font{
+            font-size: 1.618rem;
+        }
+        .med-font{
+            font-size: 1.1rem;
+        }
+        .footer{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .footer > div{
+            width: 50%;
+            padding: 2rem 0;
+        }
+        .footer > div:first-child{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .footer > div label{
+            min-width: 200px;
+        }
+        .footer > div:nth-child(2) > div{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 4px 0;
+        }
+        .sign{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+        .flex{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .sign > div:nth-child(2){
+            min-height: 100px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;
+        }
+        .right-table td{
+            border: 1px solid;
+        }
+        .right-table td > div{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+        }
+        .amounts, .bank-details{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            text-align: right;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+
+        }
+        .bank-details > div{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 8px 0;
+        }
+        .bank-details label{
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body style="font-size: 16px;">
+    <div class="top-section">
+        <div class="left-section">
+            <div><strong>Billed from:</strong></div>
+            <div>
+                <%= @invoice_data.billing_company.name%><br/>
+                <%= @invoice_data.billing_company.address%><br/>
+                GST: <%= upcase(@invoice_data.billing_company.gst)%><br/>
+                PAN: <%= upcase(@invoice_data.billing_company.pan)%><br/>
+                RERA: <%= @invoice_data.billing_company.rera_id%><br/>
+            </div>
+            <br/><br/>
+            <div><strong>Bill to:</strong></div>
+            <div>
+                4B NETWORKS PRIVATE LIMITED<br/>
+                <%= raw(broker_network_address()) %>
+            </div>
+
+        </div>
+        <div class="right-section">
+            <div><strong>Original for recipient:</strong></div>
+            <div>
+                Invoice No.: <%= @invoice_data.booking_invoice_number%><br/>
+                Invoice Date.: <%= @invoice_data.invoice_date%><br/>
+                Email id: <%= @invoice_data.billing_company.email%><br/>
+                <br/><br/><br/>
+            </div>
+            <br/><br/>
+            <div><strong>Ship to:</strong></div>
+            <div>
+                4B NETWORKS PRIVATE LIMITED<br/>
+                <%= raw(broker_network_address()) %>
+            </div>
+        </div>
+    </div>
+    <br/><br/>
+    <div class="items">
+        <table class="item-table" cellspacing="0">
+            <thead>
+            <tr>
+                <th style="width: 70%"><strong>Tax invoice</strong></th>
+                <th style="text-align: end"><strong>Amount (INR)</strong></th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rewards for <%= action_type(@invoice_data.type) %> of following items:</td>
+                    <td style="text-align: end">
+                        <%= @invoice_data.total_invoice_amount%>
+                    </td>
+                </tr>
+                <%= for invoice_item <- @invoice_data.invoice_items do %>
+                <tr>
+                    <td style="word-wrap: break-word; overflow-wrap: break-word; max-width: 500px;">
+                        <%= invoice_item.unit_number%> unit number in <%= invoice_item.wing_name%> wing, <%= invoice_item.building_name%> building
+                        by <%= invoice_item.customer_name%> for agreement value of <%= invoice_item.agreement_value%>
+                        <%= get_brokerage_percent_text(invoice_item, @invoice_data.type) %>
+                    </td>
+                    <td></td>
+                </tr>
+                <% end %>
+                <tr>
+                    <td>SAC Code: 997159</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align: end">Taxable Value: <%= @invoice_data.total_invoice_amount%></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align: end">TDS @5%: <%= @invoice_data.total_invoice_amount * 0.05 |> ceil()%></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align: end">Invoice Value: <%= @invoice_data.total_invoice_amount * 0.95 |> ceil()%></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="border-bottom: 1px solid; padding: 8px">
+        Total amount Due: <strong><%= @invoice_data.total_invoice_amount_in_words%></strong>
+    </div>
+    <div class="footer">
+        <div class="bank-details">
+            <table cellspacing="10" style="text-align: left">
+                <tr>
+                    <td>Bank Name: </td>
+                    <td><%= @invoice_data.billing_company.bank_account.bank_name%></td>
+                </tr>
+                <tr>
+                    <td>Account Holder Name: </td>
+                    <td><%= @invoice_data.billing_company.bank_account.account_holder_name%></td>
+                </tr>
+                <tr>
+                    <td>Account No.: </td>
+                    <td><%= @invoice_data.billing_company.bank_account.account_number%></td>
+                </tr>
+                <tr>
+                    <td>IFS Code: </td>
+                    <td><%= @invoice_data.billing_company.bank_account.ifsc%></td>
+                </tr>
+                <tr>
+                    <td>Account type: </td>
+                    <td><%= @invoice_data.billing_company.bank_account.bank_account_type%></td>
+                </tr>
+            </table>
+        </div>
+        <div class="sign">
+                <div>For <%= @invoice_data.billing_company.name%></div>
+                <div>
+                    <img src= <%= parse_signature(@invoice_data.billing_company.signature) %> style="width:70px" />
+                </div>
+                <div>Authorised Signatory</div>
+            </div>
+    </div>
+</body>
+</html>

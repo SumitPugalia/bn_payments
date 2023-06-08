@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Broker Agreement</title>
+</head>
+
+<body>
+  <div id="letter-container">
+    <div style="display: flex; justify-content:space-between">
+      <p>Date: <%=@pdf_map["date"]%></p>
+      <p>Place: <%=@pdf_map["place"]%></p>
+    </div>
+    <br />
+    <div>
+      <p>Name: <%=@pdf_map["name"]%></p>
+      <p>PAN: <%=@pdf_map["pan"]%></p>
+      <p>Aadhar: <%=@pdf_map["aadhar"]%></p>
+      <p>Address: <%=@pdf_map["address"]%></p>
+      <p>Email: <%=@pdf_map["email"]%></p>
+      <p>Phone number: <%=@pdf_map["phone_number"]%></p>
+      <p>Amount: Rs. <%=@pdf_map["amount"]%></p>
+    </div>
+    <br />
+    <div>
+      <p>
+        I, <%=@pdf_map["name"]%>, accept a payment of Rs. <%=@pdf_map["amount"]%> from <strong>Liquiloans</strong>, on behalf of
+        <strong>Broker Network</strong> as early payment of brokerage due from <%=@pdf_map["legal_entity_name"]%>.
+      </p>
+      <br />
+      <p>
+        I understand that <strong>Broker Network</strong> will be liable to repay <strong>Liquiloans</strong> for the
+        entire amount,
+        once the amount is received from <%=@pdf_map["legal_entity_name"]%>.
+      </p>
+      <br />
+      <p>
+        I further agree to the Terms and Conditions below.
+      </p>
+    </div>
+    <br />
+    <br />
+    <div>
+      <p>Name: <%=@pdf_map["name"]%></p>
+      <div>
+        <img src= <%=@pdf_map["signature_url"]%> style="width:300px" />
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div>
+      <p>Terms and Conditions:</p>
+      <ul>
+        <li>I/We declare that all the particulars, information and details provided in this application
+          form and the documents submitted by me/us are true, correct, complete and up-to-date
+          in all respects and that I/we have not withheld any material information.</li>
+        <li>I/We confirm that I/we are competent to contract and that no insolvency proceedings
+          or suits for recovery of outstanding dues, monies or property (ies) and/or any criminal
+          proceedings have been initiated and/or are pending against me.</li>
+        <li>I understand that LiquiLoans in no way takes warranty of services of its service provider
+          and I was not referred to the service provider by LiquiLoans.</li>
+      </ul>
+      <p style="font-size: small;"><strong>NDX P2P Private Limited</strong>, a company incorporated under the provisions
+        of the Companies
+        Act, 2013, having corporate identity number
+        U67200MH2018PTC306270 and its registered office at 1st Floor, B-104, "The Qube" having C.T.S. No. 1498, A/2,M.V.
+        Road, Hasan Pada
+        Rd, Mittal Industrial Estate, Marol Andheri (East), Mumbai, Maharashtra 400059 and branch at Plot No. 764, 5th
+        Road, Behind Rajasthan
+        Restaurant, Khar west, Govind Dham, Khar West, Mumbai, Maharashtra 400052 (referred to in the above as
+        “<strong>Liquiloans</strong>”)</p>
+      <p style="font-size: small;">
+        <strong>4B Networks Private Limited</strong>, a company incorporated under the provisions of the Companies Act,
+        2013, having
+        corporate identity number
+        U73100MH2020PTC349457 and its registers office at Ground Floor, A UNIT OF FLEUR HOTELS PVT LTD, LEMON TREE
+        PREMIER HOTEL, Behind RBL Bank Marol Andheri East, Mumbai,
+        Mumbai Suburban, Maharashtra, 400059 (referred to in the above as “<strong>Broker Network</strong>”)
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>

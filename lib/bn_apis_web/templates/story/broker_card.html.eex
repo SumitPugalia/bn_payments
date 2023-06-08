@@ -1,0 +1,123 @@
+<html>
+    <style>
+        @font-face {
+            font-family: "Graphik";
+            src: url(https://unpkg.com/@anarock/pebble@0.10.0/dist/fonts/anarock-regular.woff) format("woff"),
+            url(https://unpkg.com/@anarock/pebble@0.10.0/dist/fonts/anarock-regular.woff2) format("woff2"),
+            url(https://unpkg.com/@anarock/pebble@0.10.0/dist/fonts/anarock-regular.ttf) format("truetype"),
+            url(https://unpkg.com/@anarock/pebble@0.10.0/dist/fonts/anarock-regular.svg#Anarock) format("svg");
+            font-style: normal;
+            font-weight: normal;
+        }
+        .top-wrap {
+            background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIzLjAuNCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2OTkuNSAzMzAuNSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjk5LjUgMzMwLjU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7Y2xpcC1wYXRoOnVybCgjU1ZHSURfMl8pO2ZpbGw6IzJEMkMzRjt9Cgkuc3Qxe2NsaXAtcGF0aDp1cmwoI1NWR0lEXzJfKTtmaWxsOiMyMjIyMzM7fQoJLnN0MntjbGlwLXBhdGg6dXJsKCNTVkdJRF8yXyk7ZmlsbDojMzMzMzQ3O30KCS5zdDN7Y2xpcC1wYXRoOnVybCgjU1ZHSURfMl8pO2ZpbGw6IzI3MjczODt9Cgkuc3Q0e2NsaXAtcGF0aDp1cmwoI1NWR0lEXzJfKTtmaWxsOiMzRDNENTQ7fQoJLnN0NXtjbGlwLXBhdGg6dXJsKCNTVkdJRF8yXyk7ZmlsbDojNDY0NjVFO30KPC9zdHlsZT4KPGc+Cgk8ZGVmcz4KCQk8cGF0aCBpZD0iU1ZHSURfMV8iIGQ9Ik02NjkuNiwwSDMwQzEzLjQsMCwwLDEzLjUsMCwzMHYzMDAuNGg2OTkuNlYzMEM2OTkuNiwxMy41LDY4Ni4xLDAsNjY5LjYsMHoiLz4KCTwvZGVmcz4KCTxjbGlwUGF0aCBpZD0iU1ZHSURfMl8iPgoJCTx1c2UgeGxpbms6aHJlZj0iI1NWR0lEXzFfIiAgc3R5bGU9Im92ZXJmbG93OnZpc2libGU7Ii8+Cgk8L2NsaXBQYXRoPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTY2OS42LDBIMzBDMTMuNCwwLDAsMTMuNSwwLDMwdjMwMC40aDY5OS42VjMwQzY5OS42LDEzLjUsNjg2LjEsMCw2NjkuNiwweiIvPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTY2OS42LDBIMzBDMTMuNCwwLDAsMTMuNSwwLDMwdjMwMC40aDY5OS42VjMwQzY5OS42LDEzLjUsNjg2LjEsMCw2NjkuNiwweiIvPgoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSI2MzAuOCwzMzAuNSA1MzUuOSwzMzAuNSA1ODMuNCwyODMgCSIvPgoJPHBhdGggY2xhc3M9InN0MiIgZD0iTTY5OS42LDMwdjEzNi44TDU4My40LDI4M0wzODkuMyw4OC45TDQ3OC4yLDBoMTkxLjNDNjg2LjEsMCw2OTkuNiwxMy41LDY5OS42LDMweiIvPgoJPHBvbHlnb24gY2xhc3M9InN0MyIgcG9pbnRzPSI2OTkuNiwxNjYuOCA2OTkuNiwzMzAuNSA2MzAuOCwzMzAuNSA1ODMuNCwyODMgCSIvPgoJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSI0NzIuMiwzMzAuNSAyOTUuNiwzMzAuNSAzODMuOSwyNDIuMSAJIi8+Cgk8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMzEwLDE2OC4yTDE0Ny44LDMzMC41SDBWMzBDMCwxMy41LDEzLjQsMCwzMCwwaDExMS44TDMxMCwxNjguMnoiLz4KCTxwb2x5Z29uIGNsYXNzPSJzdDUiIHBvaW50cz0iMzgzLjksMjQyLjEgMjk1LjYsMzMwLjUgMTQ3LjgsMzMwLjUgMzEwLDE2OC4yIAkiLz4KPC9nPgo8L3N2Zz4K');
+            width: 100%;
+            height: 330px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+        }
+        .tag {
+            position: relative;
+            top:30px;
+            left: 20px;
+            margin: 40px;
+            background-color:#171726;
+            color: white;
+            border-radius: 10px;
+            width: 270px;
+            height: 60px;
+            font-size: 24px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 60px;
+        }
+        .bottom-wrap {
+            position: absolute;
+            top: 170px;
+            text-align: center;
+            width: 700px;
+        }
+        .very-specific-design {
+            width: 700px;
+            height: 1070px;
+            position: relative;
+            top: <%= @broker_data["div_top"] %>px;
+            -ms-transform: scale(<%= @broker_data["scale"] %>) ;
+            -webkit-transform: scale(<%= @broker_data["scale"] %>);
+            -moz-transform: scale(<%= @broker_data["scale"] %>);
+            transform: scale(<%= @broker_data["scale"] %>);
+            -ms-transform-origin: top center;
+            -webkit-transform-origin: top center;
+            -moz-transform-origin: top center;
+            transform-origin: top center;
+            border-radius: 30px;
+            box-shadow: 0px 0px 30px rgba(0,0,0,0.35);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .scaleable-wrapper {
+            padding: 0;
+            resize: both;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .img-sr{
+            display: inline-block;
+            vertical-align: top;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 8px solid #ffffff;
+            background-image: url(<%= raw @broker_data["profile_pic_url"] %>);
+            top: 10px;
+            position: relative;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+        }
+        .txt-content {
+            display: inline-block;
+            vertical-align: top;
+            width: 580px;
+            height: 200px;
+            top: 10px;
+            position: relative;
+            left: 40px;
+        }
+        .call-img {
+            background: url('data:image/svg+xml;base64,PHN2ZwogIHdpZHRoPSIxMDAwIgogIGhlaWdodD0iMTAwMCIKICB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIgogIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKPgogIDxwYXRoCiAgICBkPSJNNzc1LjkwMiA2MzYuMzYzYy0zNi4xNDMtMjIuODk0LTgzLjkwNC0xMy4zNDUtMTA4LjQ2IDIxLjY4NC00MC4wNDYgNDguMzc0LTg4LjQzNSAxMjguNDQxLTI3MC4zMTQtNTMuMzc3LTE4MS44NzgtMTgxLjgyLTEwMy40NTMtMjMxLjg2MS01NS4wNjQtMjcxLjg5NCAzNS4wNDEtMjQuNTQ3IDQ0LjU5My03Mi4yOTMgMjEuNjkyLTEwOC40MjRMMjUwLjI5MSA1MC44NzNDMjM1LjI3NCAyOS4xODggMjE1LjI1MS01Ljg0IDE2OC41MjkuODMxIDEyMS44MSA3LjUwNCAwIDc1Ljg5NCAwIDIyNi4wMmMwIDE1MC4xMjUgMTE4LjQ3MSAzMzMuNjEyIDI4MC4zMjYgNDk1LjQxNEM0NDIuMTggODgzLjIzNiA2MjUuNzI4IDEwMDAgNzc0LjIzNCAxMDAwYzE0OC41MDYgMCAyMjAuMjU2LTEzMy40NDUgMjI1LjI2MS0xNjYuODA2IDUuMDA2LTMzLjM2MS0yOC4zNjYtNjYuNzIzLTUwLjA1OC04MS43MzVMNzc1LjkwMiA2MzYuMzYzeiIKICAgIGZpbGwtcnVsZT0iZXZlbm9kZCIKICAvPgo8L3N2Zz4K'); height: 36px; width: 36px;margin-top: 10px; background-repeat: no-repeat; background-size: cover;display: inline-block;margin-right: 15px;
+        }
+        *{
+            font-family: Graphik, sans-serif;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+
+
+<body id='scl-bdy'>
+        <div class="scaleable-wrapper" id="scaleable-wrapper">
+  
+                <div class="very-specific-design" id="very-specific-design">
+                    <div class="top-wrap">
+                        <div class="tag">CHANNEL PARTNER</div>
+                    </div>
+                    <div class="bottom-wrap">
+                        <div class="img-sr"></div>
+                        <div style="margin-top: 50px;font-size: 48px;line-height: 64px;text-align: center;padding: 0px 30px;margin-bottom: 20px;font-weight: 700;font-family: Graphik, sans-serif;width:640px;word-break: break-word;"><%= @broker_data["name"] %></div>
+                        <div style="color:#6e6e7a;font-size: 32px;line-height: 48px;padding: 0px 30px;text-align: center;"><%= @broker_data["organization_name"] %></div>
+                        <a href="tel:<%= @phone_number %>" style="display: block;height:320px;color:#000000;font-family: Graphik, sans-serif;font-size:42px;margin-top: 60px; text-align: center;font-weight: 700"><span class="call-img"></span><%= @phone_number %><div style="display: block;background-color: black; color: white; margin: 60px auto 0px; width: 300px;padding: 30px; border-radius: 150px;text-align: center;font-size: 32px;">Call</div></a>
+                    </div>
+        
+                </div>
+
+            </div>
+</body>
+</html>
